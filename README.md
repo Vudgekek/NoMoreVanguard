@@ -1,4 +1,4 @@
-![no vanguard](https://user-images.githubusercontent.com/70611009/210660456-d40550bf-8b0b-4f33-b8fd-78b171f3db2d.jpg)
+                        ![no vanguard](https://user-images.githubusercontent.com/70611009/210660614-ec2f919f-cfeb-409d-a70d-df4a9fdae7d5.jpg)
 # VanguardParalyzer
 
 A simple script to completely disable and re-enable the Vanguard Anti-Cheat when it is not in use.
