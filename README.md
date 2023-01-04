@@ -10,10 +10,10 @@ A simple script to completely disable and re-enable the Vanguard Anti-Cheat when
 
 Learn more about why I chose to create this script:
 
-https://www.engadget.com/valorant-vanguard-riot-games-security-interview-video-170025435.html
-https://www.youtube.com/watch?v=_dOCtaBObg4
+- https://www.engadget.com/valorant-vanguard-riot-games-security-interview-video-170025435.html
+- https://www.youtube.com/watch?v=_dOCtaBObg4
 
 **Installation**:
 
-Download latest release from https://github.com/Vudge/VanguardToggler/releases
-Run the powershell script, shortcut should then be on your desktop to run the script (feel free to move it!)
+1. Download latest release from https://github.com/Vudge/VanguardToggler/releases
+2. Run the powershell script, shortcut should then be on your desktop to run the script (feel free to move it!)
