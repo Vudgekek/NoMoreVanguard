@@ -8,6 +8,11 @@ A simple script to completely disable and re-enable the Vanguard Anti-Cheat when
 - *Automatic setup*
 - *Updated Frequently*
 
+__Future Plans__:
+- Create catch for script to detect when there are multiples instances of Vanguard after an update
+- Make script automatically run when Valorant launches/closes
+- Keep project FOSS
+
 Learn more about why I chose to create this script:
 
 - https://www.engadget.com/valorant-vanguard-riot-games-security-interview-video-170025435.html
