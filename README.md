@@ -22,5 +22,5 @@ Learn more about why I chose to create this script:
 
 **Installation**:
 
-1. Download latest release from https://github.com/Vudge/VanguardParalyzer/releases
+1. Download latest release from https://github.com/Vudgekek/VanguardParalyzer/releases
 2. Run the powershell script, shortcut should then be on your desktop to run the script (feel free to move it!)
