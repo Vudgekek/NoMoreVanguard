@@ -4,7 +4,8 @@
 A simple script to completely disable and re-enable the Vanguard Anti-Cheat when it is not in use.
 
 - *Easy to use*
-- *Simple*
+- *Simple and readable script*
+- *Works quickly*
 - *Automatic setup*
 - *Updated Frequently*
 
