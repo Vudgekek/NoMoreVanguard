@@ -5,7 +5,7 @@ if %errorLevel% == 0 (
     break
 ) else (
     echo Please run script as administrator!
-    pause 10
+    pause
     exit
 )
 
