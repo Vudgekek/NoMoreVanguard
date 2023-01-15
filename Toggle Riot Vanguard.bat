@@ -2,7 +2,7 @@
 
 net session >nul 2>&1
 if %errorLevel% == 0 (
-    continue
+    break
 ) else (
     echo Please run script as administrator!
     pause 10
