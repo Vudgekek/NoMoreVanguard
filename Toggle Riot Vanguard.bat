@@ -2,7 +2,7 @@
 
 net session >nul 2>&1
 if %errorLevel% == 0 (
-    call:Check
+    goto :Check
 ) else (
     echo Please run script as administrator!
     pause
@@ -11,15 +11,17 @@ if %errorLevel% == 0 (
 
 :Check
 pushd "C:\Program Files\Riot Vanguard"
-if exist "vgk.sys" && "vgk.sys.bak" (
-    del vgk.sys.bak
-    del vgc.exe.bak
-    del vgtray.exe.bak
-    del vgrl.dll.bak
-    del installer.exe.bak
-    call:Toggle
-) else (
-    call:Toggle
+if exist "vgk.sys" (
+	if exist "vgk.sys.bak" (
+    		del vgk.sys.bak
+    		del vgc.exe.bak
+    		del vgtray.exe.bak
+    		del vgrl.dll.bak
+    		del installer.exe.bak
+    		goto :Toggle
+	) else (
+    		goto :Toggle
+	)
 )
 
 :Toggle
