@@ -1,5 +1,5 @@
 ![no vanguard](https://user-images.githubusercontent.com/70611009/210660614-ec2f919f-cfeb-409d-a70d-df4a9fdae7d5.jpg)
-# VanguardParalyzer
+# FuckVanguard
 Reissue of https://github.com/Vudgekek/VanguardToggler
 
 A simple script to completely disable and re-enable the Vanguard Anti-Cheat when it is not in use.
@@ -22,5 +22,5 @@ Learn more about why I chose to create this script:
 
 **Installation**:
 
-1. Download latest release from https://github.com/Vudgekek/VanguardParalyzer/releases
+1. Download latest release from https://github.com/Vudgekek/FuckVanguard/releases
 2. Run the powershell script, shortcut should then be on your desktop to run the script (feel free to move it!)
