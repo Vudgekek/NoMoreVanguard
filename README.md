@@ -1,4 +1,4 @@
-![no vanguard](https://user-images.githubusercontent.com/70611009/210660614-ec2f919f-cfeb-409d-a70d-df4a9fdae7d5.jpg)
+![210660614-ec2f919f-cfeb-409d-a70d-df4a9fdae7d5](https://github.com/Vudgekek/FuckVanguard/assets/70611009/d93fd5ab-c7de-44b5-a1aa-6684668730d5)
 # FuckVanguard
 
 A simple script to completely disable and re-enable the Vanguard Anti-Cheat when it is not in use.
