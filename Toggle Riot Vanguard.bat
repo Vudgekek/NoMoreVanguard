@@ -1,14 +1,16 @@
 @echo off
 
+REM Checks for privileges 
 net session >nul 2>&1
 if %errorLevel% == 0 (
     goto :Check
 ) else (
-    echo Please run script as administrator!
+    echo Please run script as an administrator!
     pause
     exit
 )
 
+REM Checks for conflicting versions of Vanguard
 :Check
 pushd "C:\Program Files\Riot Vanguard"
 if exist "vgk.sys" (
@@ -24,6 +26,7 @@ if exist "vgk.sys" (
 	)
 )
 
+REM Actual Script, shutdown at bottom is configurable for time (default is 10)
 :Toggle
 pushd "C:\Program Files\Riot Vanguard"
 if exist "vgk.sys" (
@@ -40,6 +43,6 @@ if exist "vgk.sys" (
         ren vgtray.exe.bak vgtray.exe
         ren vgrl.dll.bak vgrl.dll
         ren installer.exe.bak installer.exe
-        sc config vgc start= demand & sc config vgk start= system & shutdown /r /f /t 00
+        sc config vgc start= demand & sc config vgk start= system & shutdown /r /f /t 10
     ) 
 )
