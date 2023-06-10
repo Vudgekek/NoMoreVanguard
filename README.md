@@ -1,4 +1,4 @@
-!![210660614-ec2f919f-cfeb-409d-a70d-df4a9fdae7d5](https://github.com/Vudgekek/NoMoreVanguard/assets/70611009/78cf45b7-4cb8-41ec-86e0-921bcd518dba)
+![210660614-ec2f919f-cfeb-409d-a70d-df4a9fdae7d5](https://github.com/Vudgekek/NoMoreVanguard/assets/70611009/78cf45b7-4cb8-41ec-86e0-921bcd518dba)
 # NoMoreVanguard
 A simple script to (toggle) completely disable and re-enable Riot's Vanguard Anti-Cheat when it is not in use.
 <details> 
