@@ -3,17 +3,17 @@
 REM Checks for privileges 
 net session >nul 2>&1
 if %errorLevel% == 0 (
-    :Directory
+	call :Directory
 ) else (
-    echo Please run script as an administrator!
-    pause
-    exit
+	echo Please run script as an administrator!
+	pause
+	exit
 )
 
 REM Checks for valid directory
 :Directory
 if exist "C:\Program Files\Riot Vanguard" (
-	:Check
+	call :Check
 ) else (
 	echo Vanguard directory is invalid.
 	pause
@@ -24,10 +24,10 @@ REM Checks for conflicting versions of Vanguard
 :Check
 pushd "C:\Program Files\Riot Vanguard"
 if exist "vgk.sys" (
-	:DeleteOld
-	:Toggle
+	call :DeleteOld
+	call :Toggle
 ) else (
-    	:Toggle
+    	call :Toggle
 )
 
 REM Removes outdated version found
@@ -43,13 +43,14 @@ if exist "vgk.sys.bak" (
 REM Actual Script
 :Toggle
 if exist "vgk.sys" (
-	:Disable
+	call :Disable
 ) else (
-	:Revert
+	call :Revert
 )
 
 REM Renames various files used by Vanguard to make them temporarily unusable, then stops the services
 :Disable
+echo Disabling Vanguard...
 ren vgk.sys vgk.sys.bak
 ren vgc.exe vgc.exe.bak
 ren vgtray.exe vgtray.exe.bak
@@ -60,9 +61,11 @@ sc config vgk start= disabled
 net stop vgc 
 net stop vgk
 taskkill /IM vgtray.exe
+exit
 
-REM Reverts changes made by disable function and restarts services, then restarts the system
+REM Reverts changes made by disable function and reinstates services, then restarts the system after 60 seconds
 :Revert
+echo Enabling Vanguard...
 ren vgk.sys.bak vgk.sys
 ren vgc.exe.bak vgc.exe
 ren vgtray.exe.bak vgtray.exe
@@ -70,4 +73,5 @@ ren vgrl.dll.bak vgrl.dll
 ren installer.exe.bak installer.exe
 sc config vgc start= demand
 sc config vgk start= system
-shutdown /r /f /t 10
+shutdown /r /f /t 60
+exit
