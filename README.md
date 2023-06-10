@@ -24,5 +24,5 @@ Future Plans:
 
 **Installation**:
 
-1. Download latest release from https://github.com/Vudgekek/FuckVanguard/releases
+1. Download latest release from https://github.com/Vudgekek/NoMoreVanguard/releases
 2. Run the powershell script, shortcut should then be on your desktop to run the script (feel free to move it!)
