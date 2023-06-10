@@ -3,30 +3,31 @@
 REM Checks for privileges 
 net session >nul 2>&1
 
-if not %errorLevel% == 0 (
+if not %ERRORLEVEL% == 0 (
     echo Please run script as an administrator!
     pause
     exit
 )
 
-set "VALORANT_DIR=C:\Program Files\Riot Vanguard"
+set "VANGUARD_DIR=%PROGRAMFILES%\Riot Vanguard"
 
 REM Checks for valid directory
-if not exist "%VALORANT_DIR%" (
-    echo Vanguard directory is invalid.
+if not exist "%VANGUARD_DIR%" (
+    echo Vanguard directory is invalid. It is either not at the default location or Vanguard is not installed.
     pause
     exit
 ) 
 
 REM Checks for conflicting versions of Vanguard, removes outdated version found
 for %%a in ("vgk.sys", "vgc.exe", "vgtray.exe", "vgrl.dll", "installer.exe") do (
-    if exist "%VALORANT_DIR%\%%a" (
-        del "%VALORANT_DIR%\%%a.bak" >nul 2>&1
+    if exist "%VANGUARD_DIR%\%%a" (
+        del "%VANGUARD_DIR%\%%a.bak" >nul 2>&1
     )
 )
 
 REM Actual Script
-pushd "%VALORANT_DIR%"
+:Toggle
+pushd "%VANGUARD_DIR%"
 if exist "vgk.sys" (
     REM Renames various files used by Vanguard to make them temporarily unusable, then stops the services
     ren vgk.sys vgk.sys.bak
@@ -34,13 +35,14 @@ if exist "vgk.sys" (
     ren vgtray.exe vgtray.exe.bak
     ren vgrl.dll vgrl.dll.bak
     ren installer.exe installer.exe.bak
-    sc config vgc start= disabled
-    sc config vgk start= disabled
-    net stop vgc 
-    net stop vgk
-    taskkill /IM vgtray.exe
+    echo Disabling Vanguard...
+    sc config vgc start= disabled >nul 2>&1
+    sc config vgk start= disabled >nul 2>&1
+    net stop vgc >nul 2>&1
+    net stop vgk >nul 2>&1
+    taskkill /f /im vgtray.exe >nul 2>&1
 ) else (
-    REM Reverts changes made by disable function and reinstates services, then restarts the system after 60 seconds
+    REM Reverts changes made by disable function and reinstates services, then restarts the system after 30 seconds w/ countdown
     ren vgk.sys.bak vgk.sys
     ren vgc.exe.bak vgc.exe
     ren vgtray.exe.bak vgtray.exe
@@ -48,7 +50,15 @@ if exist "vgk.sys" (
     ren installer.exe.bak installer.exe
     sc config vgc start= demand
     sc config vgk start= system
-    shutdown /r /f /t 60
+    for /l %%b in (30 -1 1) do (
+        cls
+        echo Restarting in: %%b Seconds - [C]ancel / [R]estart Now
+        for /f "Delims=" %%c in ('Choice /T 1 /N /C:CSRW /D W') do (
+            if %%c==C goto :Toggle
+            if %%c==R shutdown /r /f /t 00
+        )
+    )
+    shutdown /r /f /t 00
 )
 
 exit
