@@ -2,9 +2,7 @@
 # NoMoreVanguard
 A simple script to (toggle) completely disable and re-enable Riot's Vanguard Anti-Cheat when it is not in use.
 <details> 
-  <summary>Context </summary>
-   Learn more about why I chose to create this script:
-
+  <summary>Learn more about why I chose to create this script </summary>
    - https://www.engadget.com/valorant-vanguard-riot-games-security-interview-video-170025435.html
    - https://www.youtube.com/watch?v=_dOCtaBObg4
 </details>
