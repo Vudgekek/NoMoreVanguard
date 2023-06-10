@@ -3,8 +3,6 @@
 A simple script to (toggle) completely disable and re-enable Riot's Vanguard Anti-Cheat when it is not in use.
 <details> 
   <summary>Context </summary>
-   This is a revamp of an old project I had been working on: "VanguardToggler".
-
    Learn more about why I chose to create this script:
 
    - https://www.engadget.com/valorant-vanguard-riot-games-security-interview-video-170025435.html
