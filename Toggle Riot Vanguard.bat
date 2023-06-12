@@ -18,16 +18,18 @@ if not exist "%VANGUARD_DIR%" (
     exit
 ) 
 
+REM Changes working directory to vanguard directory.
+pushd "%VANGUARD_DIR%"
+
 REM Checks for conflicting versions of Vanguard, removes outdated version found
 for %%a in ("vgk.sys", "vgc.exe", "vgtray.exe", "vgrl.dll", "installer.exe") do (
-    if exist "%VANGUARD_DIR%\%%a" (
-        del "%VANGUARD_DIR%\%%a.bak" >nul 2>&1
+    if exist "%%a" (
+        del "%%a.bak" >nul 2>&1
     )
 )
 
 REM Actual Script
 :Toggle
-pushd "%VANGUARD_DIR%"
 if exist "vgk.sys" (
     REM Renames various files used by Vanguard to make them temporarily unusable, then stops the services
     ren vgk.sys vgk.sys.bak
