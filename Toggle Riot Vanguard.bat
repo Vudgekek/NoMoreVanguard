@@ -32,12 +32,12 @@ REM Actual Script
 :Toggle
 if exist "vgk.sys" (
     REM Renames various files used by Vanguard to make them temporarily unusable, then stops the services
+    echo Disabling Vanguard...
     ren vgk.sys vgk.sys.bak
     ren vgc.exe vgc.exe.bak
     ren vgtray.exe vgtray.exe.bak
     ren vgrl.dll vgrl.dll.bak
     ren installer.exe installer.exe.bak
-    echo Disabling Vanguard...
     sc config vgc start= disabled >nul 2>&1
     sc config vgk start= disabled >nul 2>&1
     net stop vgc >nul 2>&1
