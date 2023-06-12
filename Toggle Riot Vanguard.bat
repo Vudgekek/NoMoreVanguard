@@ -18,7 +18,7 @@ if not exist "%VANGUARD_DIR%" (
     exit
 ) 
 
-REM Changes working directory to vanguard directory.
+REM Changes working directory to Vanguard directory.
 pushd "%VANGUARD_DIR%"
 
 REM Checks for conflicting versions of Vanguard, removes outdated version found
