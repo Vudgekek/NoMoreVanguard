@@ -10,13 +10,9 @@ https://www.youtube.com/watch?v=_dOCtaBObg4
 
 - *Easy to use*
 - *Simple and readable script*
-- *Works quickly*
 - *Automatic setup*
-- *Updated Frequently*
 
 Future Plans:
-- ~~Create catch for script to detect when there are multiples instances of Vanguard after an update~~ *Done*
-- ~~Make script automatically run when Valorant launches/closes~~ *Beyond the scope of this project*
 - Keep project FOSS
 
 **Installation**:
