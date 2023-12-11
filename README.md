@@ -12,9 +12,6 @@ https://www.youtube.com/watch?v=_dOCtaBObg4
 - *Simple and readable script*
 - *Automatic setup*
 
-Future Plans:
-- Keep project FOSS
-
 **Installation**:
 
 1. Download latest release from https://github.com/Vudgekek/NoMoreVanguard/releases
