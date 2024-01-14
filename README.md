@@ -8,11 +8,12 @@ https://www.engadget.com/valorant-vanguard-riot-games-security-interview-video-1
 https://www.youtube.com/watch?v=_dOCtaBObg4
 </details>
 
+- *Uncomplicated and readable script*
+- *Quick setup*
 - *Easy to use*
-- *Simple and readable script*
-- *Automatic setup*
 
 **Installation**:
 
-1. Download latest release from https://github.com/Vudgekek/NoMoreVanguard/releases
-2. Run the powershell script, shortcut should then be on your desktop to run the script (feel free to move it!)
+1. Open an elevated Powershell window and run `Set-ExecutionPolicy Unrestricted` (you can undo this after step 3 by removing "un")
+2. Download latest release from https://github.com/Vudgekek/NoMoreVanguard/releases
+3. Run the powershell script, shortcut should then be on your desktop to run the script
