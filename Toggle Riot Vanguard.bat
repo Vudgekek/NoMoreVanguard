@@ -3,11 +3,24 @@
 REM Checks for privileges 
 net session >nul 2>&1
 
-if not %ERRORLEVEL% == 0 (
-    echo Please run script as an administrator!
-    pause
-    exit
-)
+REM --> If error flag set, we do not have admin.
+if '%errorlevel%' NEQ '0' (
+    echo Requesting administrative privileges...
+    goto UACPrompt
+) else ( goto gotAdmin )
+
+:UACPrompt
+    echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
+    set params = %*:"="
+    echo UAC.ShellExecute "cmd.exe", "/c %~s0 %params%", "", "runas", 1 >> "%temp%\getadmin.vbs"
+
+    "%temp%\getadmin.vbs"
+    del "%temp%\getadmin.vbs"
+    exit /B
+
+:gotAdmin
+    pushd "%CD%"
+    CD /D "%~dp0"
 
 set "VANGUARD_DIR=%PROGRAMFILES%\Riot Vanguard"
 
