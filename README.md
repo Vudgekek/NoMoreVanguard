@@ -13,6 +13,7 @@ https://www.youtube.com/watch?v=_dOCtaBObg4
 - *Easy to use*
 
 **Installation** (you can also just grab the batch file and run it manually):
-1. Open an elevated Powershell window and run `Set-ExecutionPolicy Unrestricted` (you can undo this after step 3 by removing "un")
+1. Open an elevated Powershell window and run `Set-ExecutionPolicy Unrestricted` 
 2. Download latest release from https://github.com/Vudgekek/NoMoreVanguard/releases
 3. Run the powershell script, shortcut should then be on your desktop to run the script
+4. (Optional) Undo step 1 by running `Set-ExecutionPolicy Restricted` in PS
