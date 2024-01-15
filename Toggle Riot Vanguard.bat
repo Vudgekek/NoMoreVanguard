@@ -1,15 +1,10 @@
 @echo off
 
-REM Checks for privileges 
+REM Request admin perms through UAC
 net session >nul 2>&1
 
-REM --> If error flag set, we do not have admin.
-if '%errorlevel%' NEQ '0' (
+if %errorlevel% NEQ 0 (
     echo Requesting administrative privileges...
-    goto UACPrompt
-) else ( goto gotAdmin )
-
-:UACPrompt
     echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
     set params = %*:"="
     echo UAC.ShellExecute "cmd.exe", "/c %~s0 %params%", "", "runas", 1 >> "%temp%\getadmin.vbs"
@@ -17,10 +12,10 @@ if '%errorlevel%' NEQ '0' (
     "%temp%\getadmin.vbs"
     del "%temp%\getadmin.vbs"
     exit /B
-
-:gotAdmin
+) else (
     pushd "%CD%"
-    CD /D "%~dp0"
+    cd /D "%~dp0"
+)
 
 set "VANGUARD_DIR=%PROGRAMFILES%\Riot Vanguard"
 
