@@ -14,6 +14,6 @@ https://www.youtube.com/watch?v=_dOCtaBObg4
 
 **Installation** (you can also just grab the batch file and run it manually):
 1. Open an elevated Powershell window and run `Set-ExecutionPolicy Unrestricted` 
-2. Download latest release from https://github.com/Vudgekek/NoMoreVanguard/releases
+2. Download latest release from https://github.com/Vudgekek/NoMoreVanguard/releases/latest
 3. Run the Powershell script, and select where shortcut will be placed
 4. (Optional) Undo step 1 by running `Set-ExecutionPolicy Restricted` in PS
