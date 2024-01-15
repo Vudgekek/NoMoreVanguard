@@ -3,11 +3,9 @@
 
 <details> 
   <summary>Learn more about why I chose to create this script </summary>
-https://www.engadget.com/valorant-vanguard-riot-games-security-interview-video-170025435.html
+https://www.youtube.com/watch?v=_dOCtaBObg4
 
 https://www.theverge.com/2022/6/26/23184009/valorant-monitor-voice-chats-july-13th-riot-games
-
-https://www.youtube.com/watch?v=_dOCtaBObg4
 </details>
 
 - *Uncomplicated and readable script*
