@@ -1,6 +1,6 @@
 @echo off
 
-REM Request admin perms through UAC
+REM Obtain admin perms by calling UAC and creating a temporary VBS script that elevates the batch file
 net session >nul 2>&1
 
 if not %errorlevel% == 0 (
@@ -8,7 +8,6 @@ if not %errorlevel% == 0 (
     echo set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
     set "params=%*"
     echo UAC.ShellExecute "cmd.exe", "/k cd ""%~sdp0"" && %~s0 %params%", "", "runas", 1 >> "%temp%\getadmin.vbs"
-
     "%temp%\getadmin.vbs"
     del "%temp%\getadmin.vbs"
     exit /b
