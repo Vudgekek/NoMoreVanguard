@@ -3,18 +3,18 @@
 REM Request admin perms through UAC
 net session >nul 2>&1
 
-if %errorlevel% NEQ 0 (
+if not %errorlevel% == 0 (
     echo Requesting administrative privileges...
-    echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
-    set params = %*:"="
-    echo UAC.ShellExecute "cmd.exe", "/c %~s0 %params%", "", "runas", 1 >> "%temp%\getadmin.vbs"
+    echo set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
+    set "params=%*"
+    echo UAC.ShellExecute "cmd.exe", "/k cd ""%~sdp0"" && %~s0 %params%", "", "runas", 1 >> "%temp%\getadmin.vbs"
 
     "%temp%\getadmin.vbs"
     del "%temp%\getadmin.vbs"
-    exit /B
+    exit /b
 ) else (
-    pushd "%CD%"
-    cd /D "%~dp0"
+    pushd "%cd%"
+    cd /d "%~dp0"
 )
 
 set "VANGUARD_DIR=%PROGRAMFILES%\Riot Vanguard"
