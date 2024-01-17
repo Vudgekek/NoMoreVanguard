@@ -42,8 +42,7 @@ if exist "vgk.sys" (
     for %%a in ("vgk.sys", "vgc.exe", "vgtray.exe", "vgrl.dll", "installer.exe", "log-uploader.exe") do (
         ren "%%a" "%%a.bak"
     )
-    pushd "Logs"
-    del "*log"
+    del "Logs"
     sc config vgc start= disabled >nul 2>&1
     sc config vgk start= disabled >nul 2>&1
     net stop vgc >nul 2>&1
