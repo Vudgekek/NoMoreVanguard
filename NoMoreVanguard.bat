@@ -39,15 +39,15 @@ REM Actual Script
 if exist "vgk.sys" (
     REM Renames various files used by Vanguard to make them temporarily unusable, then stops the services
     echo Disabling Vanguard...
-    for %%a in ("vgk.sys", "vgc.exe", "vgtray.exe", "vgrl.dll", "installer.exe", "log-uploader.exe") do (
-        ren "%%a" "%%a.bak"
-    )
-    del /q "Logs"
     sc config vgc start= disabled >nul 2>&1
     sc config vgk start= disabled >nul 2>&1
     net stop vgc >nul 2>&1
     net stop vgk >nul 2>&1
     taskkill /f /im vgtray.exe >nul 2>&1
+    for %%a in ("vgk.sys", "vgc.exe", "vgtray.exe", "vgrl.dll", "installer.exe", "log-uploader.exe") do (
+        ren "%%a" "%%a.bak"
+    )
+    del /q "Logs"
 ) else (
     REM Reverts changes made by disable function and reinstates services, then restarts the system after 30 seconds w/ countdown
     for %%a in ("vgk.sys", "vgc.exe", "vgtray.exe", "vgrl.dll", "installer.exe", "log-uploader.exe") do (
