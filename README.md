@@ -8,12 +8,6 @@ https://www.youtube.com/watch?v=_dOCtaBObg4
 https://www.theverge.com/2022/6/26/23184009/valorant-monitor-voice-chats-july-13th-riot-games
 </details>
 
-- *Uncomplicated and readable script*
-- *Quick setup*
-- *Easy to use*
+**To install simply download and run:**
 
-**Installation** (you can also just grab the batch file and run it manually):
-1. Open an elevated Powershell window and run `Set-ExecutionPolicy Unrestricted` 
-2. Download latest release from https://github.com/Vudgekek/NoMoreVanguard/releases/latest
-3. Run the Powershell script, and select where shortcut will be placed
-4. (Optional) Undo step 1 by running `Set-ExecutionPolicy Restricted` in PS
+https://github.com/Vudgekek/NoMoreVanguard/blob/main/NoMoreVanguard.bat
