@@ -1,4 +1,4 @@
-![210660614-ec2f919f-cfeb-409d-a70d-df4a9fdae7d5](https://github.com/Vudgekek/NoMoreVanguard/assets/70611009/78cf45b7-4cb8-41ec-86e0-921bcd518dba)
+![244845856-78cf45b7-4cb8-41ec-86e0-921bcd518dba-3](https://github.com/Vudgekek/NoMoreVanguard/assets/70611009/a052a167-1ab7-4f9b-ba0f-343bd9475d38)
 # NoMoreVanguard
 
 <details> 
