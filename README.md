@@ -9,6 +9,6 @@ https://www.youtube.com/watch?v=_dOCtaBObg4
 https://www.theverge.com/2022/6/26/23184009/valorant-monitor-voice-chats-july-13th-riot-games
 </details>
 
-**To install simply download and run:**
+**Simply download and run:**
 
 https://github.com/Vudgekek/NoMoreVanguard/blob/main/NoMoreVanguard.bat
