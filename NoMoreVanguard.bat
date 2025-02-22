@@ -35,7 +35,7 @@ for %%a in ("installer.exe", "log-uploader.exe", "vgc.exe", "vgc.ico", "vgk.sys"
 if exist "vgk.sys" (
     echo Vanguard is currently enabled. Would you like to disable it? [Y/N]
     choice /c YN /n
-    if errorlevel 2 goto :eof
+    if errorlevel 2 exit
     if errorlevel 1 (
         REM Stops Vanguard services, renames key files, and deletes Vanguard logs
         echo Disabling Vanguard...
@@ -52,7 +52,7 @@ if exist "vgk.sys" (
 ) else (
     echo Vanguard is currently disabled. Would you like to enable it? [Y/N]
     choice /c YN /n
-    if errorlevel 2 goto :eof
+    if errorlevel 2 exit
     if errorlevel 1 (
         REM Reverts changes made by disable function and reinstates services, then restarts the system after 30 seconds w/ countdown
         echo Enabling Vanguard...
