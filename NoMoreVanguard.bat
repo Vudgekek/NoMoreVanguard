@@ -31,10 +31,9 @@ for %%a in ("installer.exe", "log-uploader.exe", "vgc.exe", "vgc.ico", "vgk.sys"
     )
 )
 
-:Toggle
 if exist "vgk.sys" (
-    echo Vanguard is currently enabled. Would you like to disable it? [Y/N]
-    choice /c YN /n
+    echo Vanguard is currently enabled.
+    choice /c YN /n /m "Would you like to disable it? [Y/N]:"
     if errorlevel 2 exit
     if errorlevel 1 (
         REM Stops Vanguard services, renames key files, and deletes Vanguard logs
@@ -51,8 +50,8 @@ if exist "vgk.sys" (
         del /q "Logs"
     )
 ) else (
-    echo Vanguard is currently disabled. Would you like to enable it? [Y/N]
-    choice /c YN /n
+    echo Vanguard is currently disabled.
+    choice /c YN /n /m "Would you like to enable it? This will require a restart. [Y/N]:"
     if errorlevel 2 exit
     if errorlevel 1 (
         REM Reverts changes made by disable function and reinstates services, then restarts the system after 30 seconds w/ countdown
@@ -62,15 +61,7 @@ if exist "vgk.sys" (
         )
         sc config vgc start= demand
         sc config vgk start= system
-        for /l %%b in (30 -1 1) do (
-            cls
-            echo Restarting in: %%b Seconds - [C]ancel / [R]estart Now
-            for /f "delims=" %%c in ('Choice /T 1 /N /C:CSRW /D W') do (
-                if %%c==C goto :Toggle
-                if %%c==R shutdown /r /f /t 00
-            )
-        )
-        shutdown /r /f /t 00
+        shutdown /r /f /t 30
     )
 )
 
