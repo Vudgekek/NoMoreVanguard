@@ -38,6 +38,7 @@ if exist "vgk.sys" (
     if errorlevel 2 exit
     if errorlevel 1 (
         REM Stops Vanguard services, renames key files, and deletes Vanguard logs
+        cls
         echo Disabling Vanguard...
         sc config vgc start= disabled >nul 2>&1
         sc config vgk start= disabled >nul 2>&1
