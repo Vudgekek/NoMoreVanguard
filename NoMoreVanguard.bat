@@ -61,7 +61,12 @@ if exist "vgk.sys" (
         )
         sc config vgc start= demand
         sc config vgk start= system
-        shutdown /r /f /t 30
+        cls
+        choice /c NL /n /m "Would you like to Restart [N]ow or [L]ater?"
+        if errorlevel 2 exit
+        if errorlevel 1 (
+            shutdown /r /f /t 00
+        )
     )
 )
 
