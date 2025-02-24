@@ -51,10 +51,10 @@ if exist "vgk.sys" (
     )
 ) else (
     echo Vanguard is currently disabled.
-    choice /c YN /n /m "Would you like to enable it? This will require a restart. [Y/N]:"
+    choice /c YN /n /m "Would you like to enable it? [Y/N]:"
     if errorlevel 2 exit
     if errorlevel 1 (
-        REM Reverts changes made by disable function and reinstates services, then restarts the system after 30 seconds w/ countdown
+        REM Reverts changes made by disable function and reinstates services, then prompts user for restart
         echo Enabling Vanguard...
         for %%a in (*) do (
             ren "%%a" "%%~na"
@@ -62,7 +62,8 @@ if exist "vgk.sys" (
         sc config vgc start= demand
         sc config vgk start= system
         cls
-        choice /c NL /n /m "Would you like to Restart [N]ow or [L]ater?"
+        echo These changes require a restart.
+        choice /c YN /n /m "Would you like to restart now? [Y/N]:"
         if errorlevel 2 exit
         if errorlevel 1 (
             shutdown /r /f /t 00
